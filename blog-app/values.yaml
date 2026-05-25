@@ -1,0 +1,25 @@
+# Настройки приложения
+appName: blog-customizer
+replicaCount: 1
+containerPort: 80
+
+# Настройки образа
+image:
+  repository: blog-customizer
+  tag: latest
+  pullPolicy: Never
+
+# Настройки сервиса
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 80
+
+# Настройки ресурсов (добавим для production)
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi

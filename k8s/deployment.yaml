@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-customizer-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog-customizer
+  template:
+    metadata:
+      labels:
+        app: blog-customizer
+    spec:
+      containers:
+        - name: blog-customizer
+          image: blog-customizer
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blog-customizer-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: blog-customizer
+  ports:
+    - port: 80
+      targetPort: 80

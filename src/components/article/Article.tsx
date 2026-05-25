@@ -10,11 +10,17 @@ export const Article = () => {
 	return (
 		<article className={clsx(styles.article)}>
 			<Text as='h1' size={45} weight={800} uppercase dynamicLite>
-				Портрет Западной Швейцарии
+				Портрет Западной Европы
 			</Text>
 			<div className={styles.titleDescription}>
-				<Text size={22} weight={800} uppercase align='center' dynamicLite>
-					Примитивист Фиштр расписывает новый бюджетный авиалайнер
+				<Text size={18} fontStyle='italic'>
+					Аккуратный аэропорт
+				</Text>
+				<Text size={18} fontStyle='italic'>
+					фотограф от Гастержа
+				</Text>
+				<Text size={18} fontStyle='italic'>
+					крупного самолета
 				</Text>
 			</div>
 			<img className={styles.image} src={plane} alt='Картинка самолета' />

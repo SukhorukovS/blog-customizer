@@ -1,0 +1,12 @@
+Чтобы получить доступ к приложению:
+1. Получите внешний IP сервиса:
+   kubectl get svc {{ .Values.appName }}-service
+
+2. Откройте в браузере:
+   http://<EXTERNAL-IP>
+
+Для получения логов:
+   kubectl logs -l app={{ .Values.appName }}
+
+Для обновления конфигурации:
+   helm upgrade {{ .Release.Name }} ./blog-customizer-chart
